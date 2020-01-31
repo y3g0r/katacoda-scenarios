@@ -37,12 +37,20 @@
         "answer": "step7-ans.md"
       },
       {
-        "title": "Interact",
+        "title": "List chaincode",
         "text": "step8.md"
       },
       {
-        "title": "Teardown",
+        "title": "Read from ledger",
         "text": "step9.md"
+      },
+      {
+        "title": "Write to ledger",
+        "text": "step10.md"
+      },
+      {
+        "title": "Teardown",
+        "text": "step11.md"
       }
     ],
     "intro": {

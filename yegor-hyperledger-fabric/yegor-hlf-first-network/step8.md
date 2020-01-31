@@ -13,56 +13,28 @@ Environment variable CORE_PEER_ADDRESS is used to instruct peer cli to talk to a
 
 All peer commands from cli container will control peer server running in peer0.org1.example.com container.
 
-Let's check what chaincode is isnstalled on a peer:
+Lets check what chaincode is isnstalled on a peer:
 `peer chaincode list --installed`{{execute}}
 
-We can see that chaincode "mycc", version "1.0' is installed on peer0.org1.example.com.
+We can see that chaincode "mycc", version 1.0 is installed on peer0.org1.example.com.
 
-Let's change to a different peer and check if any chaincode is installed there (look in base/docker-compose-base.yaml for peer addresses):
+Lets change to a different peer and check if any chaincode is installed there (look in base/docker-compose-base.yaml for peer addresses):
 `export CORE_PEER_ADDRESS=peer1.org1.example.com:8051`{{execute}}
 
-Let's check what chaincode is isnstalled on a peer:
+Lets check what chaincode is isnstalled on a peer:
 `peer chaincode list --installed`{{execute}}
 
 We can see that no chaincode is installed on peer1.org1.example.com. Let's switch back to original peer:
 `export CORE_PEER_ADDRESS=peer0.org1.example.com:7051`{{execute}}
 
 Chaincode on peer can be in 2 states: installed and instantiated. Installed, simply speaking, means that chaincode source code is present on peer's filesystem. But in order for chaincode to run it must be instantiated. Instantiated chaincode runs in a separate container.
-Let's list instantiated chaincodes on peer0.org1.example.com. When chaincode is instantiated it is running in context of a particular channel, so we need to specify channel
+Let's list instantiated chaincodes on peer0.org1.example.com. When chaincode is instantiated it is running in context of a particular channel, so we need to specify a channel
 
 `peer chaincode list --instantiated --channelID mychannel`{{execute}}
 
 We can also find instantiated chaincodes by inspecting running containers, but this approach is  dangerous, because there could be stale running chaincode containers.
 
-`docker ps | grep peer0.org1.example.com`{{execute}}
-
-## Chaincode Query and Invoke
-
-Chaincode can be invoked either from SDK or from command line. We will use command line.
-
-peer chaincode query command is used to send proposal and retrieve transaction simulation as a result. This can be used for read operations, as simulation result is not written to the ledger.
-`peer chaincode query -C mychannel -n mycc -c '{"Args":["query", "a"]}'`{{execute}}
-`peer chaincode query -C mychannel -n mycc -c '{"Args":["query", "b"]}'`{{execute}}
-`peer chaincode query -C mychannel -n mycc -c '{"Args":["query", "c"]}'`{{execute}}
-
-If we use peer chaincode query for chaincode operations which write to the ledger (use PutState API), we will get the response as if the data was altered, but it won't be actually committed.
-`peer chaincode query -C mychannel -n mycc -c '{"Args":["invoke", "b", "a", "10"]}'`{{execute}}
-`peer chaincode query -C mychannel -n mycc -c '{"Args":["query", "a"]}'`{{execute}}
-
-In order to commit transaction we use peer chaincode invoke command:
 ```
-peer chaincode invoke \
-    -o orderer.example.com:7050 \ 
-    --tls true \
-    --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem \
-    --peerAddresses peer0.org1.example.com:7051 \
-    --tlsRootCertFiles /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt \
-    --peerAddresses peer0.org2.example.com:9051 \
-    --tlsRootCertFiles /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt \
-    -C mychannel -n mycc -c '{"Args":["invoke","b","a","10"]}'
+exit
+docker ps | grep peer0.org1.example.com
 ```{{execute}}
-`peer chaincode query -C mychannel -n mycc -c '{"Args":["query", "a"]}'`{{execute}}
-In this particular scenario invoke command looks really cumbersome as we have to pass a ton of parameters with long paths.
-
-Feel free to explore chaincode source code in IDE fabric-samples/chaincode/chaincode_example02/go. Chaincode query/invoke entrypoint function has the following signature
-`func Invoke(stub shim.ChaincodeStubInterface) pb.Response`
