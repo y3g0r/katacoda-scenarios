@@ -1,0 +1,11 @@
+{
+  "title": "Hyperledger Fabric",
+  "description": "Learn Enterprise Private Blockchain Platform",
+  "courses": [
+    {
+      "course_id": "yegor-hlf-first-network",
+      "title": "First Network",
+      "description": "Run you first hyperledger network."
+    }
+  ]
+}
