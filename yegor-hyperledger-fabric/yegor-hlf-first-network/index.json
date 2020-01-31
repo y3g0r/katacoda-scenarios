@@ -32,20 +32,17 @@
         "answer": "step6-ans.md"
       },
       {
-        "title": "Step 7",
-        "text": "step7.md"
+        "title": "End-to-end test",
+        "text": "step7.md",
+        "answer": "step7-ans.md"
       },
       {
-        "title": "Step 8",
+        "title": "Chaincode",
         "text": "step8.md"
       },
       {
-        "title": "Step 9",
+        "title": "Teardown",
         "text": "step9.md"
-      },
-      {
-        "title": "Step 10",
-        "text": "step10.md"
       }
     ],
     "intro": {

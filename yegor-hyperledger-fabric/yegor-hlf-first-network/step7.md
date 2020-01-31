@@ -1,0 +1,3 @@
+`./byfn.sh up -o etcdraft` command runs fabric network and starts end-to-end test right away. In order to understand the test you have to understand hyperledger fabric concepts.
+
+Follow the byfn.sh script and [documentation](https://hyperledger-fabric.readthedocs.io/en/release-1.4/build_network.html#what-s-happening-behind-the-scenes) in order to gain some insights of what's going on behind the scene.
