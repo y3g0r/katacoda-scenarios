@@ -1,1 +1,3 @@
 We will learn in more details what those artifacts are in a later scenarios, for now it's sufficient to know that those artifacts are generated from `configtx.yaml` and `crypto-config.yaml` using `configtxgen` and `cryptogen` tools, and they are initial building blocks of our future fabric blockchain network.
+
+[Detailed instructions](https://hyperledger-fabric.readthedocs.io/en/release-1.4/build_network.html#crypto-generator)

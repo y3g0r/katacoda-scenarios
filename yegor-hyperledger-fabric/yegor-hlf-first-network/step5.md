@@ -7,12 +7,10 @@ The next step will populate `channel-artifacts` and `crypto-config`, meanwhile m
 
 `ls channel-artifacts/ crypto-config/`{{execute}}
 
-`./byfn.sh generate`{{execute}}
+`./byfn.sh generate -o etcdraft`{{execute}}
 
 Check that artifacts were generated:
 `ls channel-artifacts/ crypto-config/`{{execute}}
 
 ## Challenge
 Using IDE tab to the right of terminal tab explore byfn.sh script and try to figure out what generate command is doing.
-
-[Detailed instructions](https://hyperledger-fabric.readthedocs.io/en/release-1.4/build_network.html)
