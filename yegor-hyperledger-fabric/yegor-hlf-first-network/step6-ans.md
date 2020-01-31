@@ -22,3 +22,5 @@ Files/services structure involved:
   - defines named volumes for orderer and peer services
 - docker-compose-etcdraft2.yaml
   - defines orderer{2..5}.example.com (4 services) by extending orderer-base from base/peer-base.yaml (used only with etcdraft consensus type)
+
+If you invoke `docker ps` you will also see containers based on dev-peer0.org{1,2}.example.com-mycc-1.0 images. Those are chaincode containers created by peers. Those are side effects of end-to-end test, so we will discuss them in the next step.

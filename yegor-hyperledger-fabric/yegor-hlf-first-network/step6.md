@@ -10,4 +10,4 @@ We will discuss end-to-end test in the next step, feel free to proceed w/o waiti
 
 ## Challenge
 
-Using IDE tab to the right of Terminal tab, explore byfn.sh script and figure out docker-compose files/services structure which comprises the network.
+Using IDE tab to the right of Terminal tab, explore byfn.sh script and figure out docker-compose files/services structure which comprises the network. You can also create new terminal and invoke docker commands.

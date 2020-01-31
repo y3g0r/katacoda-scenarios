@@ -4,7 +4,7 @@ We could [use bootstrap script](https://hyperledger-fabric.readthedocs.io/en/rel
 mkdir fabric
 cd fabric
 curl -sSL http://bit.ly/2ysbOFE | bash -s -- 1.4.4 1.4.4 0.4.18
-```{{execute}}
+```
 
 but it will download things we don't need for this lab, so let's do everything manually.
 

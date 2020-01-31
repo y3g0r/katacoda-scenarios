@@ -13,4 +13,4 @@ Check that artifacts were generated:
 `ls channel-artifacts/ crypto-config/`{{execute}}
 
 ## Challenge
-Using IDE tab to the right of terminal tab explore byfn.sh script and try to figure out what generate command is doing.
+Using IDE tab to the right of the terminal tab explore byfn.sh script and try to figure out what generate command is doing.
