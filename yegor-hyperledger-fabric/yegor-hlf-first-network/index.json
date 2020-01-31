@@ -49,8 +49,13 @@
         "text": "step10.md"
       },
       {
+        "title": "Run another chaincode",
+        "text": "step11.md",
+        "answer": "step11-ans.md"
+      },
+      {
         "title": "Teardown",
-        "text": "step11.md"
+        "text": "step12.md"
       }
     ],
     "intro": {

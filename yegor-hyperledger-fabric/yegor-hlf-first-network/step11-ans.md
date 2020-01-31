@@ -1,0 +1,1 @@
+We don't need to provide additional peers in the last sacc invoke command because when we instantiated sacc chaincode we explicitly provided endorsment policy which states that signature of a signle member of Org1MSP is enough for transaction to be valid.
