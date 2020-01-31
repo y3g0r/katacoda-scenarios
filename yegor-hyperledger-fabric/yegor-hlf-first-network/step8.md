@@ -1,4 +1,4 @@
-In this step we will interact with the our network by [querying](https://hyperledger-fabric.readthedocs.io/en/release-1.4/glossary.html#query) (used to read data from the ledger) and [invoking](https://hyperledger-fabric.readthedocs.io/en/release-1.4/glossary.html#invoke) (used to write data to the ledger) chaincode using peer command in cli container.
+In this step we will learn how to control different peers and in particular how to list installed and instantiated chaincodes on them.
 
 List running containers:
 `docker ps`{{execute}}
@@ -34,7 +34,4 @@ Let's list instantiated chaincodes on peer0.org1.example.com. When chaincode is 
 
 We can also find instantiated chaincodes by inspecting running containers, but this approach is  dangerous, because there could be stale running chaincode containers.
 
-```
-exit
-docker ps | grep peer0.org1.example.com
-```{{execute}}
+`docker ps | grep peer0.org1.example.com`{{execute}}
