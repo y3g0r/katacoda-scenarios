@@ -6,7 +6,7 @@ We will use version 1.4.4 for now:
 
 Extract archive
 
-`tar -xvf hyperledger-fabric-linux-amd64-1.4.4.tar.gz`
+`tar -xvf hyperledger-fabric-linux-amd64-1.4.4.tar.gz`{{execute}}
 
 Add bin folder to path
 
