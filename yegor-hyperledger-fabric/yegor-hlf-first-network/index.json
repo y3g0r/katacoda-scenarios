@@ -23,7 +23,8 @@
       },
       {
         "title": "Generate artifacts",
-        "text": "step5.md"
+        "text": "step5.md",
+        "answer": "step5-ans.md"
       },
       {
         "title": "Step 6",

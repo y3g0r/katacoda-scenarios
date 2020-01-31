@@ -12,6 +12,7 @@ The next step will populate `channel-artifacts` and `crypto-config`, meanwhile m
 Check that artifacts were generated:
 `ls channel-artifacts/ crypto-config/`{{execute}}
 
-Fill free to explore in details what the script is doing in IDE tab to the right from terminal tab.
+## Challenge
+Using IDE tab to the right of terminal tab explore byfn.sh script and try to figure out what generate command is doing.
 
 [Detailed instructions](https://hyperledger-fabric.readthedocs.io/en/release-1.4/build_network.html)
