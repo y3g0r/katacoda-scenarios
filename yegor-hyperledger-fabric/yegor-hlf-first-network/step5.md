@@ -1,4 +1,4 @@
-Finally, prerequisites are met, we can proceed to actual lab.
+Finally, prerequisites are met, we can proceed to the actual lab.
 
 
 `cd first-network`{{execute}}
