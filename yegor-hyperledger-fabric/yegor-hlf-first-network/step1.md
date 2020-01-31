@@ -1,0 +1,1 @@
+Go to https://hyperledger-fabric.readthedocs.io/en/release-1.4/prereqs.html and make sure prerequisites are met in current lab.
