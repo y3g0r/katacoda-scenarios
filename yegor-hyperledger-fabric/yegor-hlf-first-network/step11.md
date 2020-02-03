@@ -20,7 +20,7 @@ This step doesn't care about channel or endorsment policies, or orderer tls CA c
 
 Just provide name, version and path (in case of chaincode in golang, path is releative to $GOPATH/src).
 
-`peer chaincode --name sacc --version 1 --path github.com/chaincode/sacc`{{execute}}
+`peer chaincode install --name sacc --version 1 --path github.com/chaincode/sacc`{{execute}}
 
 Make sure chaincode was in fact installed
 
@@ -38,10 +38,10 @@ For this, orderer is involved, so we have to explicitly enable tls and provide p
 And the last point is that when chaincode gets instantiated it may require some initialization parameters. 
 Provide them with --ctor/-c parameter as we do in `peer chaincode invoke`.
 
-```
-export CRYPTO=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto
+`export CRYPTO=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto`{{execute}}
 
-peer chaincode instantiate \ 
+```
+peer chaincode instantiate \
     --name sacc \
     --version 1 \
     --channelID mychannel \
